@@ -3,8 +3,13 @@ import 'package:incident_management/data/models/incident/incident_model.dart';
 import 'package:incident_management/views/widgets/incident_card.dart';
 
 class IncidentListWidget extends StatefulWidget {
-  const IncidentListWidget({super.key, required this.incidents});
+  const IncidentListWidget({
+    super.key,
+    required this.incidents,
+    required this.filteredInicentNotifier,
+  });
   final List<IncidentModel> incidents;
+  final ValueNotifier<List<IncidentModel>> filteredInicentNotifier;
 
   @override
   State<IncidentListWidget> createState() => _IncidentListWidgetState();
@@ -21,12 +26,9 @@ class _IncidentListWidgetState extends State<IncidentListWidget> {
     );
   }
 
-  ValueNotifier<List<IncidentModel>> incidentsNotifier =
-      ValueNotifier<List<IncidentModel>>([]);
-
   @override
   void initState() {
-    incidentsNotifier.value = widget.incidents;
+    widget.filteredInicentNotifier.value = widget.incidents;
     super.initState();
   }
 
@@ -44,17 +46,18 @@ class _IncidentListWidgetState extends State<IncidentListWidget> {
         ),
         onChanged: (value) {
           if (value.isNotEmpty) {
-            incidentsNotifier.value = widget.incidents.where((element) {
+            widget.filteredInicentNotifier.value =
+                widget.incidents.where((element) {
               return (element.location.toLowerCase().contains(value) ||
                   element.id.toLowerCase().contains(value));
             }).toList();
           } else {
-            incidentsNotifier.value = widget.incidents;
+            widget.filteredInicentNotifier.value = widget.incidents;
           }
         },
       ),
       ValueListenableBuilder(
-        valueListenable: incidentsNotifier,
+        valueListenable: widget.filteredInicentNotifier,
         builder: (context, value, child) {
           return Column(
             mainAxisSize: MainAxisSize.min,

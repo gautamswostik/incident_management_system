@@ -213,7 +213,7 @@ class __$$IncidentModelImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$IncidentModelImpl implements _IncidentModel {
+class _$IncidentModelImpl extends _IncidentModel {
   const _$IncidentModelImpl(
       {this.id = '',
       this.type = '',
@@ -224,7 +224,8 @@ class _$IncidentModelImpl implements _IncidentModel {
       this.locationCoordinates = '',
       this.description = '',
       this.timestamp = '',
-      this.assignee = ''});
+      this.assignee = ''})
+      : super._();
 
   factory _$IncidentModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$IncidentModelImplFromJson(json);
@@ -305,7 +306,7 @@ class _$IncidentModelImpl implements _IncidentModel {
   }
 }
 
-abstract class _IncidentModel implements IncidentModel {
+abstract class _IncidentModel extends IncidentModel {
   const factory _IncidentModel(
       {final String id,
       final String type,
@@ -317,6 +318,7 @@ abstract class _IncidentModel implements IncidentModel {
       final String description,
       final String timestamp,
       final String assignee}) = _$IncidentModelImpl;
+  const _IncidentModel._() : super._();
 
   factory _IncidentModel.fromJson(Map<String, dynamic> json) =
       _$IncidentModelImpl.fromJson;

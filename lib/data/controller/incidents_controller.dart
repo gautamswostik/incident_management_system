@@ -16,6 +16,7 @@ class CurrentIncidentController
 
   void fetchCurrentIncidents() async {
     try {
+      state = const AppState.loading();
       Dio client = DioClient().dioClient();
       final response =
           await client.get("http://{XXXXXXXXXX}:1234/api/v1/incidents");

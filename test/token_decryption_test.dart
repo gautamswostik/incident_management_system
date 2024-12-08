@@ -7,11 +7,11 @@
 
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:incident_management/data/network/dio_client.dart';
+import 'package:incident_management/data/helpers/auth_token_helper.dart';
 
 void main() {
   test("test", (() async {
     await dotenv.load(fileName: "assets/env/.env");
-    DioClient().dioClient();
+    getToken();
   }));
 }

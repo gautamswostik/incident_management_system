@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:incident_management/data/models/incident/incident_model.dart';
+import 'package:incident_management/views/dashboard/incident_details_view.dart';
 
 class IncidentCard extends StatelessWidget {
   const IncidentCard({super.key, required this.incident});
@@ -7,43 +8,44 @@ class IncidentCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(
-        left: 12.0,
-        right: 12.0,
-        bottom: 16.0,
-      ),
+      padding: const EdgeInsets.only(bottom: 16.0),
       child: Card(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                incident.description,
-                style:
-                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8.0),
+                child: Column(
+                  children: [
+                    subDescription(type: "Incident ID", value: incident.id),
+                    subDescription(type: "Incident Type", value: incident.type),
+                    subDescription(
+                      type: "Status",
+                      value: incident.status,
+                      isStatus: true,
+                    ),
+                    subDescription(
+                        type: "Priority Level", value: incident.priority),
+                    subDescription(type: "Location", value: incident.location),
+                  ],
+                ),
               ),
-              ...[
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 8.0),
-                  child: Column(
-                    children: [
-                      subDescription(type: "Incident ID", value: incident.id),
-                      subDescription(
-                          type: "Incident Type", value: incident.type),
-                      subDescription(
-                        type: "Status",
-                        value: incident.status,
-                        isStatus: true,
+              SizedBox(
+                width: double.infinity,
+                child: OutlinedButton(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            IncidentDetailsView(incident: incident),
                       ),
-                      subDescription(
-                          type: "Priority Level", value: incident.priority),
-                      subDescription(
-                          type: "Location", value: incident.location),
-                    ],
-                  ),
-                )
-              ]
+                    );
+                  },
+                  child: const Text("View Details"),
+                ),
+              ),
             ],
           ),
         ),
@@ -71,7 +73,13 @@ class IncidentCard extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Expanded(flex: 2, child: Text("$type : ")),
+          Expanded(
+            flex: 2,
+            child: Text(
+              "$type : ",
+              style: const TextStyle(fontWeight: FontWeight.w600),
+            ),
+          ),
           Flexible(
             flex: 3,
             child: isStatus

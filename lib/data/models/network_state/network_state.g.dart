@@ -6,14 +6,14 @@ part of 'network_state.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$NetworkSuccessModelImpl _$$NetworkSuccessModelImplFromJson(
+_$NetworkMessageModelImpl _$$NetworkMessageModelImplFromJson(
         Map<String, dynamic> json) =>
-    _$NetworkSuccessModelImpl(
+    _$NetworkMessageModelImpl(
       message: json['message'] as String? ?? '',
     );
 
-Map<String, dynamic> _$$NetworkSuccessModelImplToJson(
-        _$NetworkSuccessModelImpl instance) =>
+Map<String, dynamic> _$$NetworkMessageModelImplToJson(
+        _$NetworkMessageModelImpl instance) =>
     <String, dynamic>{
       'message': instance.message,
     };

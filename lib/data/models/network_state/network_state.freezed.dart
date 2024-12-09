@@ -14,44 +14,44 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-NetworkSuccessModel _$NetworkSuccessModelFromJson(Map<String, dynamic> json) {
-  return _NetworkSuccessModel.fromJson(json);
+NetworkMessageModel _$NetworkMessageModelFromJson(Map<String, dynamic> json) {
+  return _NetworkMessageModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$NetworkSuccessModel {
+mixin _$NetworkMessageModel {
   String get message => throw _privateConstructorUsedError;
 
-  /// Serializes this NetworkSuccessModel to a JSON map.
+  /// Serializes this NetworkMessageModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-  /// Create a copy of NetworkSuccessModel
+  /// Create a copy of NetworkMessageModel
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $NetworkSuccessModelCopyWith<NetworkSuccessModel> get copyWith =>
+  $NetworkMessageModelCopyWith<NetworkMessageModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $NetworkSuccessModelCopyWith<$Res> {
-  factory $NetworkSuccessModelCopyWith(
-          NetworkSuccessModel value, $Res Function(NetworkSuccessModel) then) =
-      _$NetworkSuccessModelCopyWithImpl<$Res, NetworkSuccessModel>;
+abstract class $NetworkMessageModelCopyWith<$Res> {
+  factory $NetworkMessageModelCopyWith(
+          NetworkMessageModel value, $Res Function(NetworkMessageModel) then) =
+      _$NetworkMessageModelCopyWithImpl<$Res, NetworkMessageModel>;
   @useResult
   $Res call({String message});
 }
 
 /// @nodoc
-class _$NetworkSuccessModelCopyWithImpl<$Res, $Val extends NetworkSuccessModel>
-    implements $NetworkSuccessModelCopyWith<$Res> {
-  _$NetworkSuccessModelCopyWithImpl(this._value, this._then);
+class _$NetworkMessageModelCopyWithImpl<$Res, $Val extends NetworkMessageModel>
+    implements $NetworkMessageModelCopyWith<$Res> {
+  _$NetworkMessageModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of NetworkSuccessModel
+  /// Create a copy of NetworkMessageModel
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -68,32 +68,32 @@ class _$NetworkSuccessModelCopyWithImpl<$Res, $Val extends NetworkSuccessModel>
 }
 
 /// @nodoc
-abstract class _$$NetworkSuccessModelImplCopyWith<$Res>
-    implements $NetworkSuccessModelCopyWith<$Res> {
-  factory _$$NetworkSuccessModelImplCopyWith(_$NetworkSuccessModelImpl value,
-          $Res Function(_$NetworkSuccessModelImpl) then) =
-      __$$NetworkSuccessModelImplCopyWithImpl<$Res>;
+abstract class _$$NetworkMessageModelImplCopyWith<$Res>
+    implements $NetworkMessageModelCopyWith<$Res> {
+  factory _$$NetworkMessageModelImplCopyWith(_$NetworkMessageModelImpl value,
+          $Res Function(_$NetworkMessageModelImpl) then) =
+      __$$NetworkMessageModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String message});
 }
 
 /// @nodoc
-class __$$NetworkSuccessModelImplCopyWithImpl<$Res>
-    extends _$NetworkSuccessModelCopyWithImpl<$Res, _$NetworkSuccessModelImpl>
-    implements _$$NetworkSuccessModelImplCopyWith<$Res> {
-  __$$NetworkSuccessModelImplCopyWithImpl(_$NetworkSuccessModelImpl _value,
-      $Res Function(_$NetworkSuccessModelImpl) _then)
+class __$$NetworkMessageModelImplCopyWithImpl<$Res>
+    extends _$NetworkMessageModelCopyWithImpl<$Res, _$NetworkMessageModelImpl>
+    implements _$$NetworkMessageModelImplCopyWith<$Res> {
+  __$$NetworkMessageModelImplCopyWithImpl(_$NetworkMessageModelImpl _value,
+      $Res Function(_$NetworkMessageModelImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of NetworkSuccessModel
+  /// Create a copy of NetworkMessageModel
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? message = null,
   }) {
-    return _then(_$NetworkSuccessModelImpl(
+    return _then(_$NetworkMessageModelImpl(
       message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -104,11 +104,11 @@ class __$$NetworkSuccessModelImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$NetworkSuccessModelImpl implements _NetworkSuccessModel {
-  const _$NetworkSuccessModelImpl({this.message = ''});
+class _$NetworkMessageModelImpl implements _NetworkMessageModel {
+  const _$NetworkMessageModelImpl({this.message = ''});
 
-  factory _$NetworkSuccessModelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$NetworkSuccessModelImplFromJson(json);
+  factory _$NetworkMessageModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NetworkMessageModelImplFromJson(json);
 
   @override
   @JsonKey()
@@ -116,14 +116,14 @@ class _$NetworkSuccessModelImpl implements _NetworkSuccessModel {
 
   @override
   String toString() {
-    return 'NetworkSuccessModel(message: $message)';
+    return 'NetworkMessageModel(message: $message)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$NetworkSuccessModelImpl &&
+            other is _$NetworkMessageModelImpl &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -131,38 +131,38 @@ class _$NetworkSuccessModelImpl implements _NetworkSuccessModel {
   @override
   int get hashCode => Object.hash(runtimeType, message);
 
-  /// Create a copy of NetworkSuccessModel
+  /// Create a copy of NetworkMessageModel
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$NetworkSuccessModelImplCopyWith<_$NetworkSuccessModelImpl> get copyWith =>
-      __$$NetworkSuccessModelImplCopyWithImpl<_$NetworkSuccessModelImpl>(
+  _$$NetworkMessageModelImplCopyWith<_$NetworkMessageModelImpl> get copyWith =>
+      __$$NetworkMessageModelImplCopyWithImpl<_$NetworkMessageModelImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$NetworkSuccessModelImplToJson(
+    return _$$NetworkMessageModelImplToJson(
       this,
     );
   }
 }
 
-abstract class _NetworkSuccessModel implements NetworkSuccessModel {
-  const factory _NetworkSuccessModel({final String message}) =
-      _$NetworkSuccessModelImpl;
+abstract class _NetworkMessageModel implements NetworkMessageModel {
+  const factory _NetworkMessageModel({final String message}) =
+      _$NetworkMessageModelImpl;
 
-  factory _NetworkSuccessModel.fromJson(Map<String, dynamic> json) =
-      _$NetworkSuccessModelImpl.fromJson;
+  factory _NetworkMessageModel.fromJson(Map<String, dynamic> json) =
+      _$NetworkMessageModelImpl.fromJson;
 
   @override
   String get message;
 
-  /// Create a copy of NetworkSuccessModel
+  /// Create a copy of NetworkMessageModel
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$NetworkSuccessModelImplCopyWith<_$NetworkSuccessModelImpl> get copyWith =>
+  _$$NetworkMessageModelImplCopyWith<_$NetworkMessageModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

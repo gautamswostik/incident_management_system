@@ -33,4 +33,12 @@ class CurrentIncidentController
       state = const AppState.error(data: []);
     }
   }
+
+  void newDataFromWebSocket(
+      {required List<IncidentModel> oldData,
+      required IncidentModel newData}) async {
+    state = const AppState.loading();
+    await Future.delayed(const Duration(milliseconds: 300));
+    state = AppState.success(data: [newData, ...oldData]);
+  }
 }

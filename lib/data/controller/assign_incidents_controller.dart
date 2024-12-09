@@ -26,8 +26,8 @@ class AssignIncidentController extends StateNotifier<AppState<String>> {
         },
       );
       if (response.statusCode == 200) {
-        NetworkSuccessModel successModel =
-            NetworkSuccessModel.fromJson(response.data);
+        NetworkMessageModel successModel =
+            NetworkMessageModel.fromJson(response.data);
 
         state = AppState.success(data: successModel.message);
       } else {
@@ -37,8 +37,8 @@ class AssignIncidentController extends StateNotifier<AppState<String>> {
       }
     } catch (e) {
       if (e is DioException) {
-        NetworkSuccessModel errorModel =
-            NetworkSuccessModel.fromJson(e.response!.data);
+        NetworkMessageModel errorModel =
+            NetworkMessageModel.fromJson(e.response!.data);
         state = AppState.error(data: errorModel.message);
       } else {
         state = const AppState.error(data: "Something went wrong");

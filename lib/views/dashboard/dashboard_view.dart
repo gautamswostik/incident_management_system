@@ -23,6 +23,7 @@ class _DashboarViewState extends ConsumerState<DashboarView> {
   Set<String> priority = {"All"};
   ValueNotifier<List<IncidentModel>> incidentsNotifier =
       ValueNotifier<List<IncidentModel>>([]);
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -119,6 +120,12 @@ class _DashboarViewState extends ConsumerState<DashboarView> {
                     child: IncidentListWidget(
                       filteredInicentNotifier: incidentsNotifier,
                       incidents: data.data!,
+                      setNewIncident: (incident) {
+                        ref
+                            .read(currentIncidentController.notifier)
+                            .newDataFromWebSocket(
+                                oldData: data.data!, newData: incident);
+                      },
                     ),
                   );
                 }

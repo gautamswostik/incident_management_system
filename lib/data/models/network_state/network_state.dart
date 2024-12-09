@@ -4,13 +4,13 @@ part 'network_state.g.dart';
 part 'network_state.freezed.dart';
 
 @freezed
-class NetworkSuccessModel with _$NetworkSuccessModel {
-  const factory NetworkSuccessModel({
+class NetworkMessageModel with _$NetworkMessageModel {
+  const factory NetworkMessageModel({
     @Default('') String message,
-  }) = _NetworkSuccessModel;
+  }) = _NetworkMessageModel;
 
-  factory NetworkSuccessModel.fromJson(Map<String, dynamic> json) =>
-      _$NetworkSuccessModelFromJson(json);
+  factory NetworkMessageModel.fromJson(Map<String, dynamic> json) =>
+      _$NetworkMessageModelFromJson(json);
 }
 
 @freezed
